@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	gomoonshot "go-moonshot/internal"
+	gomoonshot "github.com/LazyLinchen/go-moonshot/internal"
 	"io"
 	"net/http"
 )

@@ -49,7 +49,7 @@ func TestClient_CreateChatCompletionStream(t *testing.T) {
 			{
 				Role: ChatMessageRoleUser,
 				Content: &Content{
-					Text: "你好",
+					Text: "中国近代史",
 				},
 			},
 		},
@@ -66,6 +66,6 @@ func TestClient_CreateChatCompletionStream(t *testing.T) {
 			t.Error(err)
 			return
 		}
-		t.Logf("%+v\n", resp)
+		t.Logf("%s", resp.Choices[0].Delta.Content)
 	}
 }

@@ -3,8 +3,7 @@ package go_moonshot
 import (
 	"bufio"
 	"bytes"
-	"fmt"
-	gmoonshot "go-moonshot/internal"
+	gomoonshot "github.com/LazyLinchen/go-moonshot/internal"
 	"io"
 	"net/http"
 )
@@ -17,7 +16,7 @@ type streamReader[T streamable] struct {
 	isFinished  bool
 	scanner     *bufio.Scanner
 	response    *http.Response
-	unmarshaler gmoonshot.Unmarshaler
+	unmarshaler gomoonshot.Unmarshaler
 }
 
 func (stream *streamReader[T]) Recv() (response T, err error) {
@@ -49,7 +48,6 @@ func (stream *streamReader[T]) processLines() (T, error) {
 				value = value[1:]
 			}
 		}
-		fmt.Printf("value: %s\n", string(value))
 
 		if string(value) == "[DONE]" {
 			stream.isFinished = true
