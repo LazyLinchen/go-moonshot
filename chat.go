@@ -12,20 +12,20 @@ const (
 )
 
 type ChatCompletionRequest struct {
-	Messages         []Message             `json:"messages"`
-	Model            string                `json:"model"`
-	LogProbs         bool                  `json:"logprobs,omitempty"`
-	MaxTokens        int                   `json:"max_tokens,omitempty"`
-	N                int                   `json:"n,omitempty"`
-	ResponseFormat   ResponseFormat        `json:"response_format,omitempty"`
-	Seed             int                   `json:"seed,omitempty"`
-	Temperature      NullableType[float64] `json:"temperature,omitempty"`
-	TopP             NullableType[float64] `json:"top_p,omitempty"`
-	PresencePenalty  float64               `json:"presence_penalty,omitempty"`
-	FrequencyPenalty float64               `json:"frequency_penalty,omitempty"`
-	Tools            []*Tool               `json:"tools,omitempty"`
-	ToolChoice       ToolChoice            `json:"tool_choice,omitempty"`
-	Stream           bool                  `json:"stream"`
+	Messages         []Message      `json:"messages"`
+	Model            string         `json:"model"`
+	LogProbs         bool           `json:"logprobs,omitempty"`
+	MaxTokens        int            `json:"max_tokens,omitempty"`
+	N                int            `json:"n,omitempty"`
+	ResponseFormat   ResponseFormat `json:"response_format,omitempty"`
+	Seed             int            `json:"seed,omitempty"`
+	Temperature      float64        `json:"temperature,omitempty"`
+	TopP             float64        `json:"top_p,omitempty"`
+	PresencePenalty  float64        `json:"presence_penalty,omitempty"`
+	FrequencyPenalty float64        `json:"frequency_penalty,omitempty"`
+	Tools            []*Tool        `json:"tools,omitempty"`
+	ToolChoice       ToolChoice     `json:"tool_choice,omitempty"`
+	Stream           bool           `json:"stream"`
 }
 
 type ChatCompletionResponse struct {
